@@ -1,7 +1,10 @@
-import { auth } from "@/lib/auth";
+"use server"
 import prisma from "@/lib/db";
 import { Project } from "@/types/project.types";
 import { z } from "zod";
+import { authOptions } from "@/lib/auth";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
 const projectSchema = z.object({
     name: z.string(),
@@ -11,11 +14,16 @@ const projectSchema = z.object({
 
 export const createProject = async (projectData: Project) => {
 
-    const user = await auth();
+    const session = await getServerSession(authOptions)
+
+
+    if (!session || !session.user) {
+        return redirect("/");
+    }
 
     const findUser = await prisma.user.findUnique({
         where: {
-            email: user?.user?.email
+            email: session.user.email
         }
     })
 
