@@ -1,5 +1,6 @@
 "use client";
 import CreateProject from "@/components/createProject";
+import { ThemeSwitch } from "@/components/ThemeSwitch";
 import { signIn } from "next-auth/react";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
         login
       </button>
       <CreateProject />
+      <ThemeSwitch />
     </>
   );
 }
