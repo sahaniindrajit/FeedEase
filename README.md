@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# FeedEase
 
-First, run the development server:
+## Introduction
+FeedEase is a Next.js-powered feedback collection platform that enables businesses and developers to effortlessly collect, analyze, and act on user feedback. With our embeddable feedback widget, you can seamlessly integrate feedback into your websites or applications, enabling you to gain valuable insights directly from your users.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Features
+- Embeddable Feedback Widget
+  - Integrate seamlessly into any website or application
+- User-Friendly Interface
+  - Modern and intuitive UI for easy feedback submission
+- Customizable Options
+  - Tailor the widget to match your brand's identity
+- Real-Time Insights
+  - View feedback instantly on your dashboard
+- Secure & Scalable
+  - Designed with robust performance and user data protection in mind
+
+
+## Installation
+
+1. **Clone the repository**
+```
+https://github.com/sahaniindrajit/FeedEase.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**
+```
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Launch the development server**
+```
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Usage
 
-## Learn More
+1. **Ensure all dependencies are installed**
+```
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Run the development server**
+```
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Access the application**
+Open your web browser and go to `http://localhost:3000`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Once you have successfully installed FeedEase, you can start collecting feedback from your users by following these steps:**.
+- Embed the feedback widget into your website or application.
+- Customize the widget to match your brand's style.
+- Start receiving and reviewing feedback in real-time.
 
-## Deploy on Vercel
+## Contribution Guidelines
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+We welcome contributions from the community! To contribute to SketchSync:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Fork the repository**
+```
+git clone https://github.com/sahaniindrajit/FeedEase.git
+git checkout -b feature-branch-name
+```
+
+2. **Make your changes**
+
+3. **Commit your changes**
+```
+git commit -m "Add some feature"
+```
+
+4. **Push to the branch**
+```
+git push origin feature-branch-name
+```
+
+5. **Create a pull request**
+Create a pull request with a detailed description of your changes.
