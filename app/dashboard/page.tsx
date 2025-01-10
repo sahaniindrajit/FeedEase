@@ -15,11 +15,17 @@ const Page = async () => {
         throw new Error("User email is undefined");
     }
 
-    const findUser = await prisma.user.findUnique({
+    const currentUser = await prisma.user.findUnique({
         where: {
             email
-        }
-    })
+        },
+    });
+
+    const data = await prisma.project.findMany({
+        where: {
+            userId: currentUser?.id,
+        },
+    });
 
     return (
         <div>Dashboard</div>

@@ -38,7 +38,7 @@ export default function CreateProject() {
         const data = await createProject(formData);
 
         if (data.success) {
-            router.push(`/`);
+            router.push(`dashboard/feedbacks/${data.projectId}`);
             setName("");
             setUrl("");
             setDescription("");
