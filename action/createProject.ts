@@ -1,10 +1,8 @@
 "use server"
 import prisma from "@/lib/db";
 import { Project } from "@/types/project.types";
+import { auth } from "@/lib/auth";
 import { z } from "zod";
-import { authOptions } from "@/lib/auth";
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
 
 const projectSchema = z.object({
     name: z.string(),
@@ -14,18 +12,16 @@ const projectSchema = z.object({
 
 export const createProject = async (projectData: Project) => {
 
-    const session = await getServerSession(authOptions)
-
-
-    if (!session || !session.user) {
-        return redirect("/");
+    const session = await auth();
+    const email = session?.user?.email;
+    if (!email) {
+        throw new Error("User email is undefined");
     }
 
     const findUser = await prisma.user.findUnique({
-        where: {
-            email: session.user.email
-        }
-    })
+        where: { email }
+    });
+
 
     const projects = await prisma.project.findMany({
         where: {
