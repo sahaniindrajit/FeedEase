@@ -7,7 +7,7 @@ import React from 'react'
 const Page = async () => {
     const session = await auth();
 
-    if (!session?.user) {
+    if (!session) {
         redirect('/')
     }
     const email = session?.user?.email;
