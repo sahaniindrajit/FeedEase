@@ -98,7 +98,7 @@ export default function CreateProject() {
                                     <Loader size={16} className="animate-spin" />
                                 </Button>
                             ) : (
-                                <Button type="submit">
+                                <Button type="submit" className='bg-black text-white dark:bg-white dark:text-black'>
                                     Create Project
                                     <PlusSquareIcon size={16} className="ml-1" />
                                 </Button>
