@@ -1,22 +1,42 @@
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import DeleteButton from "./DeleteButton"
 
 interface ProjectCardProps {
     name: string
+    projectId: string
+    description: string
     url: string
 }
 
-export default function ProjectCard({ name, url }: ProjectCardProps) {
+export default function ProjectCard({ name, projectId, description, url }: ProjectCardProps) {
     return (
-        <Card className="flex flex-col justify-between h-full">
-            <CardContent className="pt-6">
-                <h3 className="text-lg font-semibold mb-2 dark:text-gray-100">{name}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 truncate">{url}</p>
-            </CardContent>
-            <CardFooter>
-                <Button variant="outline" className="w-full">View</Button>
-            </CardFooter>
-        </Card>
+        <div className="w-full md: max-w-72 flex flex-col border border-gray-50 rounded ">
+            <div className="text-md block p-2">
+                {name}
+            </div>
+            <hr />
+            <Link
+                href={url}
+                target="_black"
+                className="text-xs text-blue-500 font-light p-2">
+                {url.length > 35 ? `${url.slice(0, 35)}...` : url}
+            </Link>
+
+            <div className="block text-xs text-white/70 font-light p-2">
+                {description.length > 40
+                    ? `${description.slice(0, 40)}...`
+                    : description}
+            </div>
+
+            <div className="w-full flex gap-2 m-2">
+                <button className="bg-slate-400 rounded p-1 px-3 hover:bg-slate-500">
+                    <Link href={`/dashboard/feedbacks/${projectId}`}>View</Link>
+                </button>
+
+                <DeleteButton projectId={projectId} />
+            </div>
+
+        </div>
     )
 }
 
