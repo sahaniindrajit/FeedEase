@@ -56,13 +56,13 @@ export default function CreateProject() {
         <>
             <Dialog>
                 <DialogTrigger asChild>
-                    <Button variant="outline"
+                    <Button variant="outline" className='bg-black text-white dark:bg-white dark:text-black'
                     >Create Project <SquarePlus size={16} />
                     </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[425px]">
                     <DialogHeader>
-                        <DialogTitle>Create Project</DialogTitle>
+                        <DialogTitle >Create Project</DialogTitle>
                     </DialogHeader>
                     <form onSubmit={handleSubmit} className='grid gap-4'>
 
@@ -76,6 +76,9 @@ export default function CreateProject() {
 
                         <div className='grid gap-4'>
                             <Label htmlFor='url'>Project URL</Label>
+                            <span className="text-[10px] text-red-600">
+                                ONLY URL...
+                            </span>
                             <Input id='url'
                                 placeholder='Enter Project url'
                                 value={url}
