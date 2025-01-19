@@ -40,6 +40,8 @@ const Page = async () => {
                     <PanelsTopLeft size={30} />
                 </h1>
 
+                <CreateProject />
+
                 {data.length > 5 ? (
                     <Button disabled variant={"outline"}>
                         Limit Exceeded
@@ -50,7 +52,7 @@ const Page = async () => {
 
             <hr />
 
-            <div className="p-3 flex flex-wrap gap-6">
+            <div className="p-6 flex flex-wrap gap-6">
                 {data && data.length > 0 ? (
                     data.map((data, index) => (
                         <ProjectCard
