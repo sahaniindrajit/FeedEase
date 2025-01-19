@@ -1,3 +1,4 @@
+"use client"
 import { deleteProject } from '@/action/deleteProject';
 import { Loader } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -21,17 +22,20 @@ function DeleteButton(projectId: { projectId: string }) {
     return (
         <div>
             {loading ? (
-                <button className="bg-red-500 rounded p-1 px-3 hover:bg-red-600"
-                    disabled>
+                <button
+                    className="bg-red-500 rounded p-1 px-3 hover:bg-red-600 w-18 h-8 flex items-center justify-center"
+                    disabled
+                >
                     <Loader className="animate-spin" size={16} />
                 </button>
             ) : (
-                <button onClick={handleDelete} className="bg-red-500 rounded p-1 px-3 hover:bg-red-600">
+                <button
+                    onClick={handleDelete}
+                    className="bg-red-500 rounded p-1 px-3 hover:bg-red-600 w-18 h-8 flex items-center justify-center"
+                >
                     Delete
                 </button>
-            )
-            }
-
+            )}
         </div>
     )
 }
